@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebConfiguration implements WebMvcConfigurer {
 
-    @Value("${labtrack.cors.allowed-origins:https://labtrack-frontend.web.app}")
+    @Value("${labtrack.cors.allowed-origins:https://labtrack-frontend.vercel.app}")
     private String[] allowedOrigins;
 
     @Override
