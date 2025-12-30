@@ -14,19 +14,15 @@ public class WebConfiguration implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
 
-        registry.addMapping("/api/v1/**")
-                .allowedOrigins(allowedOrigins)
-                .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
-                .allowedHeaders("*")
-                .exposedHeaders("Location")
-                .allowCredentials(true)
-                .maxAge(3600);
-        registry.addMapping("/v1/api-docs/**")
-                .allowedOrigins("*")
-                .allowedMethods("*");
-
-        registry.addMapping("/swagger-ui/**")
-                .allowedOrigins("*")
-                .allowedMethods("*");
+    registry.addMapping("/api/v1/**")
+            .allowedOrigins(
+                    "https://labtrack-frontend.vercel.app",
+                    "https://labtrack-frontend-yz9d.vercel.app"
+            )
+            .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
+            .allowedHeaders("*")
+            .exposedHeaders("Location")
+            .allowCredentials(true)
+            .maxAge(3600);
     }
 }
